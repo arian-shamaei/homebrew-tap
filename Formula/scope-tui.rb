@@ -8,8 +8,8 @@ class ScopeTui < Formula
   depends_on "rust" => :build
 
   def install
-    # Build and install crate from subdir
-    system "cargo", "install", *std_cargo_args(path: "sgram-tui")
+    # Build and install from repo root (tarball contains Cargo.toml at root)
+    system "cargo", "install", *std_cargo_args
     # Provide a stable alias name
     bin.install_symlink bin/"sgram-tui" => "scope-tui"
   end

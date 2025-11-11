@@ -8,11 +8,10 @@ class SgramTui < Formula
   depends_on "rust" => :build
 
   def install
-    system "cargo", "install", *std_cargo_args(path: "sgram-tui")
+    system "cargo", "install", *std_cargo_args
   end
 
   test do
     assert_match "Terminal spectrogram viewer", shell_output("#{bin}/sgram-tui --help")
   end
 end
-
