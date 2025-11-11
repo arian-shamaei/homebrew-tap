@@ -11,7 +11,7 @@ class ScopeTui < Formula
     # Build and install from repo root (tarball contains Cargo.toml at root)
     system "cargo", "install", *std_cargo_args
     # Provide a stable alias name
-    bin.install_symlink bin/"sgram-tui" => "scope-tui"
+    
   end
 
   test do
