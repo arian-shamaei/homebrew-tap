@@ -6,10 +6,13 @@ class ScopeTui < Formula
   license "MIT"
 
   depends_on "rust" => :build
+  on_linux do
+    depends_on "alsa-lib"
+  end
 
   def install
     # Build and install from repo root (tarball contains Cargo.toml at root)
-    system "cargo", "install", *std_cargo_args, "--no-default-features"
+    system "cargo", "install", *std_cargo_args, "--features=mic"
   end
 
   test do
