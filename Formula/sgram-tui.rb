@@ -8,7 +8,7 @@ sha256 "6bde58115351f2d328ec827352cef3faef610a8f94d671a52473565a41414f46"
   depends_on "rust" => :build
 
   def install
-    system "cargo", "install", *std_cargo_args
+    system "cargo", "install", *std_cargo_args, "--no-default-features"
   end
 
   test do

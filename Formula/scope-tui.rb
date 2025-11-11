@@ -9,9 +9,7 @@ sha256 "6bde58115351f2d328ec827352cef3faef610a8f94d671a52473565a41414f46"
 
   def install
     # Build and install from repo root (tarball contains Cargo.toml at root)
-    system "cargo", "install", *std_cargo_args
-    # Provide a stable alias name
-    
+    system "cargo", "install", *std_cargo_args, "--no-default-features"
   end
 
   test do
